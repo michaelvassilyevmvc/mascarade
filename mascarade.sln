@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.RetalService", "mascarade.RetalService\mascarade.RetalService.csproj", "{E91D19B9-4F52-492B-A01C-897584F99FFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.RentalService", "mascarade.RentalService\mascarade.RentalService.csproj", "{E91D19B9-4F52-492B-A01C-897584F99FFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
