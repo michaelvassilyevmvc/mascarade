@@ -11,5 +11,9 @@ public class MappingProfiles: Profile
         CreateMap<Costume, CostumeDto>();
         CreateMap<CreateCostumeDto, Costume>();
         CreateMap<UpdateCostumeDto, Costume>();
+        
+        CreateMap<Customer, CustomerDto>();
+        CreateMap<CreateCustomerDto, Customer>();
+        CreateMap<UpdateCustomerDto, Customer>();
     }
 }
