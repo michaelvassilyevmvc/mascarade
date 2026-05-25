@@ -45,7 +45,7 @@ public class CustomersController : ControllerBase
         return CreatedAtAction(nameof(GetCustomerById), new { Id = customer.Id }, _mapper.Map<CustomerDto>(customer));
     }
 
-    [HttpPut("{id]")]
+    [HttpPut("{id}")]
     public async Task<ActionResult<CustomerDto>> UpdateCustomer(Guid id, UpdateCustomerDto updateCustomerDto)
     {
         var customer = await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);

@@ -6,6 +6,6 @@ public class UpdateCostumeDto
     public string Description { get; set; }
     public string ImageUrl { get; set; }
     public string Size { get; set; }
-    public required decimal RentalPriceDay { get; set; }
-    public required bool IsAvailable { get; set; } 
+    public decimal? RentalPriceDay { get; set; }
+    public bool? IsAvailable { get; set; }
 }

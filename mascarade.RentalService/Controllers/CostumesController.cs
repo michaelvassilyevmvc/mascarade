@@ -60,12 +60,12 @@ public class CostumesController : ControllerBase
 
         // TODO: authentication
 
-        costume.Name = updatedCostumeDto.Name;
-        costume.Description = updatedCostumeDto.Description;
-        costume.ImageUrl = updatedCostumeDto.ImageUrl;
-        costume.IsAvailable = updatedCostumeDto.IsAvailable;
-        costume.Size = updatedCostumeDto.Size;
-        costume.RentalPriceDay = updatedCostumeDto.RentalPriceDay;
+        costume.Name = updatedCostumeDto.Name ?? costume.Name;
+        costume.Description = updatedCostumeDto.Description ?? costume.Description;
+        costume.ImageUrl = updatedCostumeDto.ImageUrl ?? costume.ImageUrl;
+        costume.IsAvailable = updatedCostumeDto.IsAvailable ?? costume.IsAvailable;
+        costume.Size = updatedCostumeDto.Size ?? costume.Size;
+        costume.RentalPriceDay = updatedCostumeDto.RentalPriceDay ?? costume.RentalPriceDay;
 
         var result = await _context.SaveChangesAsync() > 0;
         if (!result)
