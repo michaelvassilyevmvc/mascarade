@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.RentalService", "mascarade.RentalService\mascarade.RentalService.csproj", "{E91D19B9-4F52-492B-A01C-897584F99FFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.SearchService", "mascarade.SearchService\mascarade.SearchService.csproj", "{4F8E96C5-C418-4537-85CD-1EDBC446626C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{E91D19B9-4F52-492B-A01C-897584F99FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E91D19B9-4F52-492B-A01C-897584F99FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E91D19B9-4F52-492B-A01C-897584F99FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F8E96C5-C418-4537-85CD-1EDBC446626C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F8E96C5-C418-4537-85CD-1EDBC446626C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F8E96C5-C418-4537-85CD-1EDBC446626C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F8E96C5-C418-4537-85CD-1EDBC446626C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
