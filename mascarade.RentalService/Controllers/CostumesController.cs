@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using mascarade.Contracts;
 using mascarade.RentalService.Data;
 using mascarade.RentalService.DTOs;
 using mascarade.RentalService.Entities;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,11 +15,15 @@ public class CostumesController : ControllerBase
 {
     private readonly RentalDbContext _context;
     private readonly IMapper _mapper;
+    private readonly IPublishEndpoint _publishEndpoint;
 
-    public CostumesController(RentalDbContext context, IMapper mapper)
+    public CostumesController(RentalDbContext context,
+        IMapper mapper,
+        IPublishEndpoint publishEndpoint)
     {
         _context = context;
         _mapper = mapper;
+        _publishEndpoint = publishEndpoint;
     }
 
     [HttpGet]
@@ -37,10 +43,15 @@ public class CostumesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Costume>> CreateCostume(CreateCostumeDto createCostumeDto)
+    public async Task<ActionResult<CostumeDto>> CreateCostume(CreateCostumeDto createCostumeDto)
     {
         var costume = _mapper.Map<Costume>(createCostumeDto);
         _context.Costumes.Add(costume);
+        
+        // передача данных в RabbitMQ
+        var costumeCreated = _mapper.Map<CostumeDto>(costume);
+        await _publishEndpoint.Publish(_mapper.Map<CostumeCreated>(costumeCreated));
+        
         var result = await _context.SaveChangesAsync() > 0;
         if (!result)
         {
@@ -67,6 +78,9 @@ public class CostumesController : ControllerBase
         costume.Size = updatedCostumeDto.Size ?? costume.Size;
         costume.RentalPriceDay = updatedCostumeDto.RentalPriceDay ?? costume.RentalPriceDay;
 
+        // передача данных в RabbitMQ
+        await _publishEndpoint.Publish(_mapper.Map<CostumeUpdated>(costume));
+        
         var result = await _context.SaveChangesAsync() > 0;
         if (!result)
         {
@@ -84,6 +98,13 @@ public class CostumesController : ControllerBase
         // TODO: check authentification
 
         _context.Costumes.Remove(costume);
+        
+        // передача данных в RabbitMQ
+        await _publishEndpoint.Publish<CostumeDeleted>(new
+        {
+            Id = costume.Id.ToString()
+        });
+        
         var result = await _context.SaveChangesAsync() > 0;
         if (!result) return BadRequest("Failed to delete costume");
 

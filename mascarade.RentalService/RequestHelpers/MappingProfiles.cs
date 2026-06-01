@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using mascarade.Contracts;
 using mascarade.RentalService.DTOs;
 using mascarade.RentalService.Entities;
 
@@ -19,5 +20,8 @@ public class MappingProfiles : Profile
         CreateMap<Rental, RentalDto>();
         CreateMap<CreateRentalDto, Rental>();
         CreateMap<UpdateRentalDto, Rental>();
+
+        CreateMap<CostumeDto, CostumeCreated>();
+        CreateMap<Costume, CostumeUpdated>();
     }
 }

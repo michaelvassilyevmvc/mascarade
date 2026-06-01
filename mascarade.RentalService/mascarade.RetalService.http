@@ -1,6 +1,0 @@
-@mascarade.RetalService_HostAddress = http://localhost:5233
-
-GET {{mascarade.RetalService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
