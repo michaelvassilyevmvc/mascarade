@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.SearchService", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.Contracts", "mascarade.Contracts\mascarade.Contracts.csproj", "{C6D07159-7B3B-47B5-9D5D-4F6AC00CC7F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.IdentityService", "mascarade.IdentityService\mascarade.IdentityService.csproj", "{7770DCDD-0F40-40D3-BAD5-DF793585F197}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C6D07159-7B3B-47B5-9D5D-4F6AC00CC7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6D07159-7B3B-47B5-9D5D-4F6AC00CC7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6D07159-7B3B-47B5-9D5D-4F6AC00CC7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7770DCDD-0F40-40D3-BAD5-DF793585F197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7770DCDD-0F40-40D3-BAD5-DF793585F197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7770DCDD-0F40-40D3-BAD5-DF793585F197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7770DCDD-0F40-40D3-BAD5-DF793585F197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
