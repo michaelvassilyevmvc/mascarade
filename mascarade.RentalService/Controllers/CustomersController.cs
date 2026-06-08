@@ -2,6 +2,7 @@
 using mascarade.RentalService.Data;
 using mascarade.RentalService.DTOs;
 using mascarade.RentalService.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,6 +36,7 @@ public class CustomersController : ControllerBase
         return Ok(_mapper.Map<CustomerDto>(customer));
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<CustomerDto>> CreateCustomer(CreateCustomerDto createCustomerDto)
     {
@@ -45,6 +47,7 @@ public class CustomersController : ControllerBase
         return CreatedAtAction(nameof(GetCustomerById), new { Id = customer.Id }, _mapper.Map<CustomerDto>(customer));
     }
 
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<ActionResult<CustomerDto>> UpdateCustomer(Guid id, UpdateCustomerDto updateCustomerDto)
     {
@@ -60,6 +63,7 @@ public class CustomersController : ControllerBase
         return Ok(_mapper.Map<CustomerDto>(customer));
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteCustomer(Guid id)
     {

@@ -34,7 +34,7 @@ public class RentalsController : ControllerBase
         if (rental is null) return NotFound();
         return Ok(_mapper.Map<RentalDto>(rental));
     }
-
+    
     [HttpPost]
     public async Task<ActionResult<Rental>> CreateRental(CreateRentalDto createRentalDto)
     {

@@ -4,6 +4,7 @@ using mascarade.RentalService.Data;
 using mascarade.RentalService.DTOs;
 using mascarade.RentalService.Entities;
 using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,6 +43,7 @@ public class CostumesController : ControllerBase
         return Ok(_mapper.Map<CostumeDto>(costume));
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<CostumeDto>> CreateCostume(CreateCostumeDto createCostumeDto)
     {
@@ -63,6 +65,7 @@ public class CostumesController : ControllerBase
             _mapper.Map<CostumeDto>(costume));
     }
 
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<ActionResult<CostumeDto>> UpdateCostume(Guid id, UpdateCostumeDto updatedCostumeDto)
     {
@@ -90,6 +93,7 @@ public class CostumesController : ControllerBase
         return Ok(_mapper.Map<CostumeDto>(costume));
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteCostume(Guid id)
     {
