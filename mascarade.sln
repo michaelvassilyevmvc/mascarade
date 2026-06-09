@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.Contracts", "masc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.IdentityService", "mascarade.IdentityService\mascarade.IdentityService.csproj", "{7770DCDD-0F40-40D3-BAD5-DF793585F197}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "GatewayService\GatewayService.csproj", "{D7D152AC-B39B-46F5-9164-3DC1A83F45F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mascarade.GatewayService", "mascarade.GatewayService\mascarade.GatewayService.csproj", "{D7D152AC-B39B-46F5-9164-3DC1A83F45F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
